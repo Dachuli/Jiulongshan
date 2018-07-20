@@ -166,7 +166,9 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        vm=new BKViewModel(new Respositary());//?????????????????????dependency?
+        //TODO use factory method?
+        vm=BKViewModel.getInstance(new Respositary());//?????????????????????dependency?
+
         vm.getMainInitLiveData().observe(this, new Observer() {
             @Override
             public void onChanged(@Nullable Object o) {
@@ -202,9 +204,33 @@ public class MainActivity extends AppCompatActivity
     private void taskdispatcher(BKViewModel vm){
 
     }
+
+
+    /*
+    * 1.PAID,
+    * 2.LIMIT,
+    * 3.MSLength,
+    * 4.CS,
+    * 5.Unit,
+    * 6.DriverSetting,
+    *
+    * 7.DisclaimerSet,
+    * 8.Settings,
+    *
+    *
+    * */
     private void localdatainit(){
 
     }
+
+
+    /*
+    *1.Freeminutes,
+    * 2.perchasecheck every 10 days,
+    * 3.make purchase ready for unpaid user.
+    *
+    *
+    * */
     private void internetdatainit(){
 
     }
